@@ -1,0 +1,22 @@
+{
+  "directory": "public/javascripts/bower_components",
+  "shorthand-resolver": "git://github.com//.git",
+  "color": true,
+  "timeout": 60000,
+  "save": true,
+  "save-exact": true,
+  "strict-ssl": true,
+  "storage": {
+    "packages" : "~/.bower/packages",
+    "registry" : "~/.bower/registry",
+    "links" : "~/.bower/links"
+  },
+  "scripts": {
+    "preinstall": "",
+    "postinstall": "",
+    "preuninstall": ""
+  },
+  "ignoredDependencies": [
+    "jquery"
+  ]
+}

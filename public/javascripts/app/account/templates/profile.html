@@ -1,0 +1,40 @@
+<div class="view-continer">
+
+<div class="form-container">
+    <form name="profileForm" ng-submit="actions.save(profileForm.$valid)">
+
+        <div class="view-row">
+            <div class="view-column">
+                <label for="">Name</label>
+                <br>
+                <input class="form-input"  ng-model="profile.data.details.name" placeholder="name">
+            </div>
+
+            <div class="view-column">
+                <label for="">Nationality</label>
+                  <br>
+                <input class="form-input" ng-model="profile.data.details.nationality" placeholder="nationality">
+            </div>
+        </div>
+        <div class="view-row">
+
+            <div class="view-column">
+                <label for="">Country</label>
+                  <br>
+                <input class="form-input"  ng-model="profile.data.details.country" placeholder="country">
+            </div>
+
+            <div class="view-column">
+                <label for="">Mobile</label>
+                  <br>
+                <input class="form-input"  ng-model="profile.data.details.mobile" placeholder="mobile">
+            </div>
+            <button ng-disabled="!profileForm.$valid">Save</button>
+            
+        </div>
+
+
+    </form>
+    
+</div>
+</div>

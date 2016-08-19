@@ -1,0 +1,15 @@
+
+extends _layout
+
+block content
+
+    .login-page
+    .form
+        form(method="post",action="/signin")
+            input(type='text',name="email",placeholder='username')
+            input(type='password',name="password", placeholder='password')
+            input(type="submit",value="login") 
+            a(href="/auth/facebook" ,class="facebook") Facebook
+            p.message
+                | Not registered? 
+                a(href='/signup') Create an account
