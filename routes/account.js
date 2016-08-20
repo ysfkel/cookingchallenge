@@ -9,11 +9,22 @@ router.get('/signin', function (req, res) {
   res.render('index');
 });
 
-router.post('/signin', passport.authenticate('local-login', {
-  successRedirect: '/account#index',
-  failureRedirect: 'signin',
-  failureFlash: true
-}))
+router.post('/signin', function (req, res, next) {
+  passport.authenticate('local-login', function (err, user) {
+    if (err) { return next(err); }
+
+    if (!user) { return res.render('index'); }
+
+    req.logIn(user, function (err) {
+      if (err) {
+        return next(err);
+      }
+    })
+
+   res.render('user-profile');
+
+  })(req, res, next);
+});
 
 router.get('/signup', function (req, res) {
   res.render('register', { message: req.flash('signupMessage') });
@@ -41,7 +52,7 @@ router.post('/signup', function (req, res, next) {
         console.log(err);
         throw err;
       } else {
-        res.redirect('/account#index');
+        res.render('user-profile');
       }
     })
 

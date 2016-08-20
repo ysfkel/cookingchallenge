@@ -13,7 +13,7 @@ define(['app/modules/app', 'ui-router',
         .state('base.profile', view.profile)
         .state('base.images',view.images)
 
-        $urlRouterProvider.otherwise('/not-found');
+        $urlRouterProvider.otherwise('/index');
 
         //CORS SETTINGS
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
