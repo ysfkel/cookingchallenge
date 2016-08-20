@@ -15,12 +15,10 @@
 
             </form>
         </header>
-
-
-
         <ul class="image-list">
             <li ng-repeat="image in profile.data.images track by $index">
-                <img src="../uploads/{{image.filename}}" class="thumbnail">
+                <!--<img src="../uploads/{{image.filename}}" class="thumbnail">-->
+                <img src="https://cookingchallengestorage.blob.core.windows.net/images/{{image.filename}}" class="thumbnail">
             </li>
         </ul>
 
