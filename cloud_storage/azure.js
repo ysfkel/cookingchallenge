@@ -8,13 +8,12 @@ var uploads_folder=require('../config/app.infra.config').uploads_folder;
 var uploads_folder=require('../config/app.infra.config').uploads_folder;
 var sendFile = function(req, res, imageName, cb,blobSvc) {
 
-    var localPath = './uploads/' + imageName;
+    var localPath = uploads_folder + imageName;
 
   blobSvc.createBlockBlobFromLocalFile('images', imageName, localPath, function(error, result, response) {
     if (!error) {
       cb();
     } else {
-      console.log('path',localPath)
       console.log('error on image upload is ', error);
       return error;
     }
@@ -22,8 +21,8 @@ var sendFile = function(req, res, imageName, cb,blobSvc) {
 };
 
 var upload=function(req, res, imageName, callback){
-	var accounName='cookingchallengestorage';
-    var accountKey='sECbz0y/fxqNhmRoEwJSS6WXgSEFQLC434F4rH4DtcqchyXfzJ+XEPz4aolMT5l03p8uOX4IVu0xlSOfrcv47Q==';
+	var accounName='azure_storage_account_name';
+    var accountKey='azure_storage_account_key';
   	var retryOperations = new azure.ExponentialRetryPolicyFilter();
 	var blobService=azure.createBlobService(accounName,accountKey).withFilter(retryOperations);
 	

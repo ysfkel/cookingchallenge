@@ -16,7 +16,7 @@ router.post('/upload', function (req, res, next) {
         var file = files.file;
 
         var tempPath = file.path;
-        console.log('uploads_folder',uploads_folder)
+        
         var targetPath = path.resolve('./uploads/'+file.name);
         fs.rename(tempPath, targetPath, function (err) {
             console.log('r',targetPath)
