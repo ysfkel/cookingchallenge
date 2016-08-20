@@ -8,7 +8,6 @@ var formidable = require('formidable')
 var path = require('path');
 var fs = require('fs');
 var uploads_folder = require('../config/app.infra.config').uploads_folder;
-///
 router.post('/upload', function (req, res, next) {
 
 
