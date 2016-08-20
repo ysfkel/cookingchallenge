@@ -7,7 +7,7 @@ var fs = require('fs');
 var uploads_folder=require('../config/app.infra.config').uploads_folder;
 
 var sendFile = function(req, res, imageName, cb,blobSvc) {
-  var localPath = './public/'+uploads_folder+'/' + imageName;
+  var localPath = +uploads_folder+imageName;
   blobSvc.createBlockBlobFromLocalFile('images', imageName, localPath, function(error, result, response) {
     if (!error) {
       cb();
